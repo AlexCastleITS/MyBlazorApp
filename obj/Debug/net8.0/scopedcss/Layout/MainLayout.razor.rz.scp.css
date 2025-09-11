@@ -116,3 +116,57 @@ h1[b-pv57ownmzj], h2[b-pv57ownmzj], h3[b-pv57ownmzj] {
 ul[b-pv57ownmzj] {
     padding-left: 1.2em;
 }
+.main-layout[b-pv57ownmzj] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+}
+
+.main-header[b-pv57ownmzj] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #3a3a6c;
+    color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+.top-navbar[b-pv57ownmzj] {
+    background: #5f5fc4;
+    padding: 0.5rem 2rem;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.content-area[b-pv57ownmzj] {
+    flex: 1;
+    background: #f7f8fc;
+    border-radius: 16px;
+    margin: 2rem;
+    padding: 2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+h1[b-pv57ownmzj], h2[b-pv57ownmzj], h3[b-pv57ownmzj] {
+    color: #4e54c8;
+}
+
+a[b-pv57ownmzj], .btn-link[b-pv57ownmzj] {
+    color: #8f94fb;
+}
+
+.btn-primary[b-pv57ownmzj] {
+    background-color: #4e54c8;
+    border-color: #3a3a6c;
+    color: #fff;
+}
+
+.btn-primary:hover[b-pv57ownmzj] {
+    background-color: #8f94fb;
+    color: #3a3a6c;
+}

@@ -84,6 +84,59 @@
     background: #1a4fa0;
 }
 
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: auto; /* Navbar più alta per icone grandi */
+    justify-content: center;
+}
+
+.nav-list li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-list a, .nav-list .active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f8f8ff; /* Testo molto chiaro */
+    background: transparent;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    height: 100%;
+}
+
+.nav-list a:hover, .nav-list .active {
+    background: #8f94fb;
+    color: #23235b; /* Testo scuro su hover/active */
+}
+
+.nav-icon {
+    font-size: 2.2rem; /* Icone più grandi */
+    margin-bottom: 0.2rem;
+    display: flex;
+    align-items: center;
+    color: #f8f8ff; /* Icone chiare */
+}
+
+.nav-text {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #f8f8ff; /* Testo chiaro */
+    margin-top: 0.1rem;
+}
+
 @media (min-width: 641px) {
     .navbar-toggler {
         display: none;
@@ -96,7 +149,6 @@
 
     .nav-scrollable {
         /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+        height: fit-content;
     }
 }
