@@ -1,0 +1,45 @@
+﻿@page "/domande"
+@using System.ComponentModel.DataAnnotations
+<h1>Invia una domanda</h1>
+<div class="question-form" style="margin-bottom: 30px;">
+    <EditForm Model="@newQuestion" OnValidSubmit="@AddQuestion">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div class="mb-3">
+            <label for="questionText" class="form-label">Domanda:</label>
+            <InputText id="questionText" class="form-control" @bind-Value="newQuestion.Text" />
+        </div>
+        <button type="submit" class="btn btn-primary">Invia</button>
+    </EditForm>
+</div>
+
+@if (questions.Any())
+{
+    <h2>Domande inviate</h2>
+    <ul class="list-group">
+        @foreach (var q in questions)
+        {
+            <li class="list-group-item">@q.Text</li>
+        }
+    </ul>
+}
+
+@code {
+    private List<Question> questions = new();
+    private Question newQuestion = new();
+
+    private void AddQuestion()
+    {
+        if (!string.IsNullOrWhiteSpace(newQuestion.Text))
+        {
+            questions.Add(new Question { Text = newQuestion.Text });
+            newQuestion = new Question();
+        }
+    }
+
+    public class Question
+    {
+        [Required(ErrorMessage = "La domanda è obbligatoria.")]
+        public string? Text { get; set; }
+    }
+}

@@ -1,0 +1,43 @@
+﻿@page "/images"
+
+<PageTitle>Galleria Immagini</PageTitle>
+
+<h1 class="gallery-title">Galleria Immagini</h1>
+
+<div class="gallery-container" style="width:40%;">
+    <img src="@images[currentImage]" alt="Immagine @((currentImage+1))" class="gallery-image" style="width:100%;"/>
+    <button class="btn btn-primary gallery-btn" @onclick="ChangeImage" disabled="@(currentImage == images.Count - 1)">
+        Cambia immagine
+    </button>
+    <button class="btn btn-secondary gallery-btn" @onclick="RestartGallery" style="margin-left: 1rem;">
+        Riparti
+    </button>
+    <div class="gallery-counter">
+        Immagine @((currentImage + 1)) di @images.Count
+    </div>
+</div>
+
+@code {
+
+    private List<string> images = new()
+    {
+        "img/capocollo.png",
+        "img/focaccia.png",
+        "img/Orecchiette.png",
+    };
+
+    private int currentImage = 0;
+
+    private void ChangeImage()
+    {
+        if (currentImage < images.Count - 1)
+        {
+            currentImage++;
+        }
+    }
+
+    private void RestartGallery()
+    {
+        currentImage = 0;
+    }
+}
